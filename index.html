@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ESTILOS BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- VUE JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>ConversorVue</title>
+</head>
+
+<body>
+    <h1 class="text-center display-4 text-primary">CONVERTIDOR NUMÉRICO</h1>
+    <hr>
+    <div id="app" class="container">
+        <!--Aqui colocamos el id, con el que identificaremos nuestro objeto vue. -->
+        <!-- Ingreso del numero que vamos a convertir -->
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Ingrese un número a convertir</span>
+            </div>
+            <input v-model="numero" type="number" autofocus="autofocus" class="form-control" name="num">
+
+        </div>
+        <br>
+        <h3>Convertir desde...</h3>
+        <!-- Radios de para seleccionar las opciones -->
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input  v-model="baseSeleccionada" type="radio" class="form-check-input" value="2" name="tipoConversion">Binario
+            </label>
+        </div>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input v-model="baseSeleccionada" type="radio" class="form-check-input" value="8" name="tipoConversion">Octal
+            </label>
+        </div>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input v-model="baseSeleccionada" type="radio" class="form-check-input" value="10" name="tipoConversion">Decimal
+            </label>
+        </div>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input v-model="baseSeleccionada" type="radio" class="form-check-input" value="16" name="tipoConversion">Hexadecimal
+            </label>
+        </div>
+
+        <br><br>
+        <!-- mostrar resusltados  -->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-warning" readonly="readonly" type="button">BINARIO</button>
+            </div>
+            <input v-model="binario" type="text" class="form-control">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-warning" readonly="readonly" type="button">OCTAL</button>
+            </div>
+            <input v-model="octal" type="text" class="form-control">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-warning" readonly="readonly" type="button">DECIMAL</button>
+            </div>
+            <input v-model="decimal" type="text" class="form-control">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-warning" readonly="readonly" type="button">HEXADECIMAL</button>
+            </div>
+            <input v-model="hexadecimal" type="text" class="form-control">
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted text-center">Creador Victoria Castro</span>
+        </div>
+    </footer>
+
+
+    <!-- FUNCIONES NUMERICAS -->
+    <script src="main.js"></script>
+</body>
+
+</html>
